@@ -11,4 +11,16 @@ PuckSupply::PuckSupply(int HP)
 }
 
 
+PuckSupply::~PuckSupply()
+{
+	delete[] _Puck_arr;
+}
 
+
+Puck PuckSupply::getPuck()
+{
+	if (_cnt > 0) {
+		cout << "Debug of HP: " << _cnt<< endl;
+		return _Puck_arr[--_cnt];
+	}
+}
